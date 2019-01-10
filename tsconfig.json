@@ -2,21 +2,23 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "types": ["node"],
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "module": "es2015",
+    "module": "commonjs",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es5",
+    "target": "es6",
     "typeRoots": [
       "node_modules/@types"
     ],
+    "resolveJsonModule": true,
     "lib": [
       "es2018",
-      "dom"
+      "es6"
     ]
   }
 }

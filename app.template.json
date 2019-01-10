@@ -1,0 +1,50 @@
+{
+  "account": {
+    "mail": "liuwill@techartisan.cn",
+    "secret": "1111111",
+    "host": "test"
+  },
+  "host": {
+    "env": "test",
+    "title": "test环境",
+    "host": "http://test.liuwlll.com"
+  },
+  "hostConfig": {
+    "qa": {
+      "env": "test",
+      "title": "test环境",
+      "host": "http://test.liuwlll.com"
+    },
+    "production": {
+      "env": "test",
+      "title": "test环境",
+      "host": "http://test.liuwlll.com"
+    }
+  },
+  "api": {
+    "pageList": "/api/page/list",
+    "createPage": "/api/page/create",
+    "updatePage": "/api/page/update",
+    "pageData": "/api/page/config",
+    "addShelfPosition": "/api/page/shelf/add",
+    "setShelfAt": "/api/page/shelf/set",
+    "shelfList": "/api/page/shelf/list",
+    "addCoupon": "/api/page/coupon/add",
+    "listCoupon": "/api/page/coupon/list",
+    "addGoodsPosition": "/api/page/goods/add",
+    "setGoodsAt": "/api/page/goods/set",
+    "listGoods": "/api/page/goods/list",
+    "setGoodsModule": "/api/page/goods/config",
+    "bindShareCoupon": "/api/page/share/bind",
+    "fetchShareCoupon": "/api/page/share/meta",
+    "addFlashGoodsPosition": "/api/page/flash/add",
+    "setFlashGoodsAt": "/api/page/flash/set",
+    "reloadFlashCache": "/api/page/flash/reload",
+    "listFlashGoods": "/api/page/flash/list",
+    "addPresaleGoodsPosition": "/api/page/presale/add",
+    "setPresaleGoodsAt": "/api/page/presale/set",
+    "listPresaleGoods": "/api/page/presale/list",
+    "setPresaleModule": "/api/page/presale/config",
+    "reloadPresaleCache": "/api/page/presale/cache"
+  }
+}
