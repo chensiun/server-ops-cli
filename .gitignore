@@ -45,4 +45,5 @@ Thumbs.db
 /release
 
 app.json
+app.local.json
 /vmall

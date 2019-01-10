@@ -7,7 +7,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "ts-node main.ts"
+    "start": "ts-node main.ts",
+    "init": "cp app.template.json app.json"
   },
   "dependencies": {
     "axios": "^0.18.0",
