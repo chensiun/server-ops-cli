@@ -1,0 +1,23 @@
+{
+  "name": "server-ops-cli",
+  "version": "1.0.0",
+  "description": "ops for mgtv vmall",
+  "main": "main.ts",
+  "author": "liuwill",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "ts-node main.ts"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "chalk": "^2.4.2",
+    "rxjs": "^6.3.3",
+    "typescript": "^3.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.18",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.12.0"
+  }
+}
