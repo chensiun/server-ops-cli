@@ -1,10 +1,29 @@
-import chalk from 'chalk'
-import * as pageApi from './lib/api/page.api'
 import { from } from 'rxjs'
+import chalk from 'chalk'
+import * as path from 'path'
+import * as fs from 'fs'
+import { logger } from './lib/services/logger'
+import playbook from './lib/playbook'
 
-pageApi.listActivityPages().subscribe(response => {
-  console.log(JSON.stringify(response))
-  console.log('hello')
+function main() {
+  var appPath = path.resolve('./app.json')
+  if (!fs.existsSync(appPath)) {
+    logger.error('找不到配置文件 app.json')
+    return Promise.resolve(1)
+  }
 
-  process.exit(0)
-})
+  const story = playbook.storyTeller.tell(process.argv)
+  if (!story) {
+    logger.info(chalk.red(`> Command Not Found!`))
+    process.exit(1)
+  }
+  story.execute().subscribe(
+    result => {
+      process.exit(0)
+    },
+    err => logger.error(err),
+    () => logger.info('story completed.')
+  )
+}
+
+main()
