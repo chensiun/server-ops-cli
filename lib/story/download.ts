@@ -4,6 +4,7 @@ import { concatMap } from 'rxjs/operators'
 import * as pageApi from '../api/page.api'
 import { logger } from '../services/logger'
 import * as reader from '../services/reader'
+import { appConfig } from '../config/global'
 import chalk from 'chalk'
 import * as path from 'path'
 import * as fs from 'fs'
@@ -94,11 +95,12 @@ export default class DownloadStory implements BaseStory {
     targetMap['timstamp'] = Date.now()
     targetMap['record_time'] = new Date().toLocaleString()
 
-    const filename = `page_${targetMap['page_id']}.json`
+    const hostName = appConfig.account.host
+    const filename = `page_${hostName}_${targetMap['page_id']}.json`
     if (!fs.existsSync(distPath)) {
       fs.mkdirSync(distPath)
     }
-    fs.writeFileSync(path.join(distPath, `page_${targetMap['page_id']}.json`), JSON.stringify(targetMap), 'utf-8')
+    fs.writeFileSync(path.join(distPath, filename), JSON.stringify(targetMap), 'utf-8')
     logger.info([
       chalk.yellow('> Save File '),
       chalk.cyan(filename),
