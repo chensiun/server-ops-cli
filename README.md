@@ -14,3 +14,11 @@ yarn run init
 # 运行
 yarn start
 ```
+
+## 功能
+
+### 下载
+
+```shell
+yarn start download
+```

@@ -53,6 +53,7 @@ export default class DownloadStory implements BaseStory {
   }
 
   save(pageData): Promise<any> {
+    const hostName = appConfig.account.host
     const dataFields = [
       "page_id",
       'PAGE_DATA',
@@ -94,8 +95,8 @@ export default class DownloadStory implements BaseStory {
 
     targetMap['timstamp'] = Date.now()
     targetMap['record_time'] = new Date().toLocaleString()
+    targetMap['env'] = hostName
 
-    const hostName = appConfig.account.host
     const filename = `page_${hostName}_${targetMap['page_id']}.json`
     if (!fs.existsSync(distPath)) {
       fs.mkdirSync(distPath)
