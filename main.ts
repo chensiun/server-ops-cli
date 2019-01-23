@@ -19,10 +19,13 @@ function main() {
   }
   story.execute().subscribe(
     result => {
-      process.exit(0)
+      logger.info(chalk.magenta(`[${story.sayName()}]`) + ` success.`)
     },
     err => logger.error(err),
-    () => logger.info('story completed.')
+    () => {
+      logger.info('story completed.')
+      process.exit(0)
+    }
   )
 }
 

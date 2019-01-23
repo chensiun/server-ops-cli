@@ -13,6 +13,10 @@ const distPath = path.resolve('./dist/')
 
 export default class DownloadStory implements BaseStory {
 
+  sayName(): String {
+    return 'Download Story';
+  }
+
   askPage(response): Promise<any> {
     const pageList = response.data.list
     const pageIds = pageList.map(item => item.id)
