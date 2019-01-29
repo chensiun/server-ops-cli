@@ -47,3 +47,5 @@ Thumbs.db
 app.json
 app.local.json
 /vmall
+
+**/.gitignore

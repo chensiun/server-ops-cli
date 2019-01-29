@@ -1,8 +1,10 @@
 import DownloadStory from "./story/download";
+import BuilderStory from "./story/builder";
 import { BaseStory } from './story/base';
 
 const book = {
   download: new DownloadStory(),
+  builder: new BuilderStory(),
 }
 
 class StoryTeller {
