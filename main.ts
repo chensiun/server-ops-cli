@@ -21,7 +21,10 @@ function main() {
     result => {
       logger.info(chalk.magenta(`[${story.sayName()}]`) + ` success.`)
     },
-    err => logger.error(err),
+    err => {
+      logger.info(chalk.red(err.message))
+      logger.error(err)
+    },
     () => {
       logger.info('story completed.')
       process.exit(0)

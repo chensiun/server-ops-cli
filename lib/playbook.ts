@@ -1,10 +1,12 @@
 import DownloadStory from "./story/download";
 import BuilderStory from "./story/builder";
+import HelpStory from "./story/help";
 import { BaseStory } from './story/base';
 
 const book = {
   download: new DownloadStory(),
   builder: new BuilderStory(),
+  help: new HelpStory(),
 }
 
 class StoryTeller {
@@ -17,11 +19,14 @@ class StoryTeller {
   tell(rawArgv: Array<string>): BaseStory {
     const argvParams = rawArgv.slice(2)
 
-    const storyName = argvParams[0]
+    let storyName = argvParams[0]
     if (!this.book[storyName]) {
-      return null
+      storyName = 'help'
     }
-    return this.book[storyName]
+    const activeStory = this.book[storyName];
+
+    activeStory.readMenu(this.book);
+    return activeStory;
   }
 }
 

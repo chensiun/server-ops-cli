@@ -3,6 +3,7 @@ import { Observable, zip, of } from 'rxjs';
 import { concatMap } from 'rxjs/operators'
 import * as pageApi from '../api/page.api'
 import { logger } from '../services/logger'
+import { StoryRegister } from '../decorators/register'
 import * as reader from '../services/reader'
 import { appConfig } from '../config/global'
 import chalk from 'chalk'
@@ -11,6 +12,7 @@ import * as fs from 'fs'
 
 const distPath = path.resolve('./dist/')
 
+@StoryRegister
 export default class DownloadStory implements BaseStory {
 
   sayName(): String {
