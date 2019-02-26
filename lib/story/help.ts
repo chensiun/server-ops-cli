@@ -23,7 +23,6 @@ export default class HelpStory implements BaseStory {
   }
 
   printBook(): Promise<any> {
-    console.log(this.book, '+++')
     return Promise.resolve(this.book)
   }
 

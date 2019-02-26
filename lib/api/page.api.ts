@@ -277,3 +277,82 @@ export const reloadPagePresaleCached = (pageId) : Observable<any> => {
     }),
   }).then(response => response.data))
 }
+
+/* ** 多楼层预售 ** */
+/* // *********************************************************** // */
+
+export const listFloorPresale = (pageId) => {
+  const ajax = request.getInstance()
+  return ajax.get(serverApi.listFloorPresale, {
+    params: helper.buildQuery({
+      page_id: pageId,
+    }),
+  }).then(response => response.data)
+}
+
+export const createPresaleFloor = (pageId, requestData) => {
+  const ajax = request.getInstance()
+  return ajax.request({
+    method: 'post',
+    url: serverApi.createPresaleFloor,
+    data: helper.buildQuery(Object.assign({
+      page_id: pageId,
+    }, requestData))
+  }).then(response => response.data)
+}
+
+export const addFloorPresaleGoods = (pageId, requestData) => {
+  const ajax = request.getInstance()
+  return ajax.request({
+    method: 'post',
+    url: serverApi.addFloorPresaleGoods,
+    data: helper.buildQuery(Object.assign({
+      page_id: pageId,
+    }, requestData))
+  }).then(response => response.data)
+}
+
+export const fetchFloorPresaleData = (pageId, index) => {
+  const ajax = request.getInstance()
+  return ajax.get(serverApi.fetchFloorPresaleData, {
+    params: helper.buildQuery({
+      page_id: pageId,
+      index,
+    }),
+  }).then(response => response.data)
+}
+
+export const setFloorPresaleGoods = (pageId, requestData) => {
+  const ajax = request.getInstance()
+  return ajax.request({
+    method: 'put',
+    url: serverApi.setFloorPresaleGoods,
+    data: helper.buildQuery(Object.assign({
+      page_id: pageId,
+    }, requestData))
+  }).then(response => response.data)
+}
+
+export const setFloorPresaleConfig = (pageId, index, poster) => {
+  const ajax = request.getInstance()
+  return ajax.request({
+    method: 'put',
+    url: serverApi.setFloorPresaleConfig,
+    data: helper.buildQuery({
+      page_id: pageId,
+      index,
+      poster,
+    })
+  }).then(response => response.data)
+}
+
+export const reloadPageFloorPresaleCached = (pageId) => {
+  const ajax = request.getInstance()
+  return ajax.request({
+    method: 'post',
+    url: serverApi.reloadPageFloorPresaleCached,
+    data: helper.buildQuery({
+      page_id: pageId,
+    }),
+  }).then(response => response.data)
+}

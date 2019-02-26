@@ -55,6 +55,7 @@ export default class DownloadStory implements BaseStory {
       pageApi.listCoupon(page),
       pageApi.listFlashGoods(page),
       pageApi.fetchShareCouponPack(page),
+      pageApi.listFloorPresale(page),
     )
   }
 
@@ -71,6 +72,7 @@ export default class DownloadStory implements BaseStory {
       "COUPON",
       "FLASH",
       "SHARE",
+      "FLOOR_PRESALE",
     ]
     const pageId = pageData[0]
 

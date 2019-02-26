@@ -45,6 +45,14 @@
     "setPresaleGoodsAt": "/api/page/presale/set",
     "listPresaleGoods": "/api/page/presale/list",
     "setPresaleModule": "/api/page/presale/config",
-    "reloadPresaleCache": "/api/page/presale/cache"
+    "reloadPresaleCache": "/api/page/presale/cache",
+
+    "listFloorPresale": "/api/page/page/floor_presale/floor/list",
+    "createPresaleFloor": "/api/page/page/floor_presale/floor/create",
+    "addFloorPresaleGoods": "/api/page/page/floor_presale/goods/add",
+    "fetchFloorPresaleData": "/api/page/page/floor_presale/goods/list",
+    "setFloorPresaleGoods": "/api/page/page/floor_presale/goods/set",
+    "setFloorPresaleConfig": "/api/page/page/floor_presale/floor/set",
+    "reloadPageFloorPresaleCached": "/api/page/page/floor_presale/reload"
   }
 }
